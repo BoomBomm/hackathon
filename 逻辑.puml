@@ -1,0 +1,39 @@
+@startuml
+
+skinparam BackgroundColor #FFF68F
+
+class "顾客" as 1 <<(E,lightgreen)>>{
+}
+class "订餐订单" as 2 <<(E,lightgreen)>>{
+}
+class "订餐支付" as 3 <<(E,lightgreen)>>{
+}
+class "订单菜品项" as 4 <<(E,lightgreen)>>{
+}
+class "菜单" as 5 <<(E,lightgreen)>>{
+}
+class "菜单上的菜品" as 6 <<(E,lightgreen)>>{
+}
+class "下单" as 11 <<(R, Yellow)>>{
+} 
+class "付费" as 22 <<(R, Yellow)>>{
+} 
+class "包含" as 33 <<(R, Yellow)>>{
+} 
+class "选择" as 44 <<(R, Yellow)>>{
+} 
+class "包含" as 55 <<(R, Yellow)>>{
+} 
+
+1 "1" -- 11
+11 "m" -- 2
+2 "1" -- 22
+22 "1" -- 3
+2 "m" -right- 33
+33 "m" -right- 4
+4 "1" -right- 44
+44 "m" -right- 6
+6 "m" -up- 55
+55 "m" -up- 5
+
+@enduml
